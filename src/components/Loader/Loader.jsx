@@ -2,9 +2,20 @@
 import { Oval } from 'react-loader-spinner';
 
 const LoaderMessage = () => {
-  return (
-    <div style={{ textAlign: 'center', margin: '20px' }}>
-      <Oval color="#00BFFF" height={80} width={80} />
+   return (
+    <div className="loader">
+      <Oval
+        height={80}
+        width={80}
+        color="#4fa94d"
+        wrapperStyle={{}}
+        wrapperClass=""
+        visible={true}
+        ariaLabel='oval-loading'
+        secondaryColor="#4fa94d"
+        strokeWidth={2}
+        strokeWidthSecondary={2}
+      />
     </div>
   );
 };

@@ -8,7 +8,12 @@ const ImageCard = ({ image }) => {
 };
 
 ImageCard.propTypes = {
-    image: PropTypes.func.isRequired,
+  image: PropTypes.shape({
+    urls: PropTypes.shape({
+      thumb: PropTypes.string.isRequired,
+    }).isRequired,
+    alt_description: PropTypes.string,
+  }).isRequired,
 };
 
 export default ImageCard;

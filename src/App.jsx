@@ -3,11 +3,11 @@ import axios from 'axios';
 import { Toaster, toast } from 'react-hot-toast';
 import SearchBar from './components/SearchBar/SearchBar';
 import ImageGallery from './components/ImageGallery/ImageGallery';
-import LoaderMessage from './components/LoaderMessage/LoaderMessage';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 import LoadMoreBtn from './components/LoadMoreBtn/LoadMoreBtn';
 import ImageModal from './components/ImageModal/ImageModal';
-import { useLocalStorage } from './components/hooks/useLocalStorage';
+import { useLocalStorage } from './hooks/useLocalStorage';
+import LoaderMessage from './components/Loader/Loader';
 
 const App = () => {
   const [query, setQuery] = useLocalStorage('query', '');
