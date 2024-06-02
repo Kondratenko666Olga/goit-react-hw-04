@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import styles from './LoadMoreBtn.module.css';
 const LoadMoreBtn = ({ onClick }) => {
   return (
-    <div style={{ textAlign: 'center', margin: '20px' }}>
-      <button onClick={onClick}>Load more</button>
+    <div className={styles.loadMore} >
+      <button className={styles.loadMoreBtn} onClick={onClick}>Load more</button>
     </div>
   );
 };
