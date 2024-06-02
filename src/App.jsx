@@ -19,6 +19,9 @@ const App = () => {
 
   const fetchImages = useCallback(async () => {
     setLoading(true);
+
+    console.log('Fetching images...');
+
     try {
       const response = await axios.get('https://api.unsplash.com/search/photos', {
         params: { query, page, per_page: 12 },
@@ -26,6 +29,9 @@ const App = () => {
           Authorization: `Client-ID ejxFSFIFRaj69H35OnJtbUJb4DQ3p23sjfoLE-1UzAQ`,
         },
       });
+
+      console.log('Received response:', response);
+
       setImages(prevImages => [...prevImages, ...response.data.results]);
       setError(null);
     } catch (error) {
@@ -33,15 +39,27 @@ const App = () => {
       setError('Failed to fetch images');
     } finally {
       setLoading(false);
+
+      console.log('Fetching completed.');
+
     }
   }, [query, page, setImages]);
 
   useEffect(() => {
+    console.log('Query:', query);
+    console.log('Page:', page);
+
+
     if (!query) return;
+    // setImages([]);
     fetchImages();
   }, [query, page, fetchImages]);
 
   const handleSearchSubmit = newQuery => {
+    console.log('Submitting search with query:', newQuery);
+
+
+
     if (newQuery === '') {
       toast.error('Please enter a search term');
       return;
@@ -49,6 +67,7 @@ const App = () => {
     setQuery(newQuery);
     setImages([]);
     setPage(1);
+    console.log('Request');
   };
 
   const handleLoadMore = () => {

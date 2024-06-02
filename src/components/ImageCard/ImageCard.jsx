@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import styles from './ImageCard.module.css';
 const ImageCard = ({ image }) => {
   return (
-    <div>
+    <div className={styles.card}> 
       <img src={image.urls.thumb} alt={image.alt_description} />
     </div>
   );
