@@ -1,0 +1,15 @@
+.cardList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+
+    padding: 0;
+}
+
+.galleryItem{
+    border: solid #808080;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+  }
